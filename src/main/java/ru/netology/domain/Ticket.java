@@ -37,11 +37,20 @@ public class Ticket implements Comparable<Ticket> {
         return timeTo;
     }
 
+//    // Вспомогательные методы для корректной работы equals
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Ticket ticket = (Ticket) o;
+//        return price == ticket.price && timeFrom == ticket.timeFrom && timeTo == ticket.timeTo && from.equals(ticket.from) && to.equals(ticket.to);
+//    }
+
     @Override
     public int compareTo(Ticket o) {
-        if(this.price < o.price) {
+        if(this.getPrice() < o.getPrice()) {
             return -1;
-        } else if (this.price > o.price){
+        } else if (this.getPrice() > o.getPrice()){
                 return 1;
         } else {
             return 0;
